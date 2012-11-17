@@ -9,7 +9,9 @@
   <meta name="author" content="Jimmy Huangjin">
 
   
-  <meta name="description" content="redis-search 是一款基于 Redis 的高效搜索组件, 使用起来非常方便, 效果也非常不错, 但是偶尔搜索的时候有这个错误: Tried to use a connection from a child process without reconnecting. You need to &hellip;">
+  <meta name="description" content="如果你是在Ubuntu下 sudo apt-get install mongodb, 很不幸，你很有可能会得到一堆错误，具体原因和解决办法如下: 1
+2
+3 The Ubuntu repositories have a very old version of mongoDB - the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +72,65 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/11/17/update-mongodb-to-newest-stable-version/">Update MongoDB to Newest Stable Version</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-17T18:57:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/11/17/update-mongodb-to-newest-stable-version/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>如果你是在Ubuntu下 sudo apt-get install mongodb, 很不幸，你很有可能会得到一堆错误，具体原因和解决办法如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  The Ubuntu repositories have a very old version of mongoDB - the current stable branch is 2.0 at the time of writing and yours is 1.6, 
+</span><span class='line'>  you could try fixing the error but it's not really worth it. 
+</span><span class='line'>  You should get an up to date version from the official 10gen repos as described here and uninstall the one you have now:</span></code></pre></td></tr></table></div></figure>
+
+
+<p>解决办法参考下面：
+<a href="http://www.mongodb.org/display/DOCS/Ubuntu+and+Debian+packages">http://www.mongodb.org/display/DOCS/Ubuntu+and+Debian+packages</a></p>
+
+<h5>General procedure would be:</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  Remove Ubuntu version (apt-get remove mongodb)
+</span><span class='line'>  Add new repo line and gpg key as described above
+</span><span class='line'>  Install 10gen version (apt-get update; apt-get install mongodb-10gen)</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/">解决 Redis-search 在 Passenger 下的 Reconnect 错误</a></h1>
     
     
@@ -87,6 +148,8 @@
 
 
 <time datetime="2012-11-17T18:12:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/#disqus_thread">Comments</a>
         
       </p>
     
@@ -238,6 +301,8 @@
 
 <time datetime="2012-11-17T17:07:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
         
+         | <a href="/blog/2012/11/17/new-post/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -262,6 +327,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/11/17/update-mongodb-to-newest-stable-version/">Update MongoDB to newest stable version</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/">解决 redis-search 在 Passenger 下的 reconnect 错误</a>
@@ -336,6 +405,19 @@
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'jimhjsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

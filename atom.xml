@@ -4,7 +4,7 @@
   <title><![CDATA[Huangjin's Blog]]></title>
   <link href="http://jimhj.github.com/atom.xml" rel="self"/>
   <link href="http://jimhj.github.com/"/>
-  <updated>2012-11-17T18:38:51+08:00</updated>
+  <updated>2012-11-17T19:17:49+08:00</updated>
   <id>http://jimhj.github.com/</id>
   <author>
     <name><![CDATA[Jimmy Huangjin]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Update MongoDB to newest stable version]]></title>
+    <link href="http://jimhj.github.com/blog/2012/11/17/update-mongodb-to-newest-stable-version/"/>
+    <updated>2012-11-17T18:57:00+08:00</updated>
+    <id>http://jimhj.github.com/blog/2012/11/17/update-mongodb-to-newest-stable-version</id>
+    <content type="html"><![CDATA[<p>如果你是在Ubuntu下 sudo apt-get install mongodb, 很不幸，你很有可能会得到一堆错误，具体原因和解决办法如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  The Ubuntu repositories have a very old version of mongoDB - the current stable branch is 2.0 at the time of writing and yours is 1.6, 
+</span><span class='line'>  you could try fixing the error but it's not really worth it. 
+</span><span class='line'>  You should get an up to date version from the official 10gen repos as described here and uninstall the one you have now:</span></code></pre></td></tr></table></div></figure>
+
+
+<p>解决办法参考下面：
+<a href="http://www.mongodb.org/display/DOCS/Ubuntu+and+Debian+packages">http://www.mongodb.org/display/DOCS/Ubuntu+and+Debian+packages</a></p>
+
+<h5>General procedure would be:</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  Remove Ubuntu version (apt-get remove mongodb)
+</span><span class='line'>  Add new repo line and gpg key as described above
+</span><span class='line'>  Install 10gen version (apt-get update; apt-get install mongodb-10gen)</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[解决 redis-search 在 Passenger 下的 reconnect 错误]]></title>

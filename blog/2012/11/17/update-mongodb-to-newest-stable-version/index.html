@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello World - Huangjin's Blog</title>
+  <title>Update MongoDB to newest stable version - Huangjin's Blog</title>
   <meta name="author" content="Jimmy Huangjin">
 
   
-  <meta name="description" content=" 之前博客在Heroku上面，经常被大墙墙掉不说，还慢的发指，还是迁移到 Github 上面来，稳定又免费，何乐而不为呢？
-">
+  <meta name="description" content="如果你是在Ubuntu下 sudo apt-get install mongodb, 很不幸，你很有可能会得到一堆错误，具体原因和解决办法如下: 1
+2
+3 The Ubuntu repositories have a very old version of mongoDB - the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jimhj.github.com/blog/2012/11/17/new-post/">
+  <link rel="canonical" href="http://jimhj.github.com/blog/2012/11/17/update-mongodb-to-newest-stable-version/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,7 +69,7 @@
   
   <header>
     
-      <h1 class="entry-title">Hello World</h1>
+      <h1 class="entry-title">Update MongoDB to Newest Stable Version</h1>
     
     
       <p class="meta">
@@ -84,7 +85,7 @@
   
 
 
-<time datetime="2012-11-17T17:07:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
+<time datetime="2012-11-17T18:57:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -93,7 +94,28 @@
   </header>
 
 
-<div class="entry-content"><p>  之前博客在Heroku上面，经常被大墙墙掉不说，还慢的发指，还是迁移到 Github 上面来，稳定又免费，何乐而不为呢？</p>
+<div class="entry-content"><p>如果你是在Ubuntu下 sudo apt-get install mongodb, 很不幸，你很有可能会得到一堆错误，具体原因和解决办法如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  The Ubuntu repositories have a very old version of mongoDB - the current stable branch is 2.0 at the time of writing and yours is 1.6, 
+</span><span class='line'>  you could try fixing the error but it's not really worth it. 
+</span><span class='line'>  You should get an up to date version from the official 10gen repos as described here and uninstall the one you have now:</span></code></pre></td></tr></table></div></figure>
+
+
+<p>解决办法参考下面：
+<a href="http://www.mongodb.org/display/DOCS/Ubuntu+and+Debian+packages">http://www.mongodb.org/display/DOCS/Ubuntu+and+Debian+packages</a></p>
+
+<h5>General procedure would be:</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  Remove Ubuntu version (apt-get remove mongodb)
+</span><span class='line'>  Add new repo line and gpg key as described above
+</span><span class='line'>  Install 10gen version (apt-get update; apt-get install mongodb-10gen)</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
@@ -116,7 +138,7 @@
   
 
 
-<time datetime="2012-11-17T17:07:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
+<time datetime="2012-11-17T18:57:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
       
 
 
@@ -124,7 +146,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jimhj.github.com/blog/2012/11/17/new-post/" data-via="jim_hj" data-counturl="http://jimhj.github.com/blog/2012/11/17/new-post/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jimhj.github.com/blog/2012/11/17/update-mongodb-to-newest-stable-version/" data-via="jim_hj" data-counturl="http://jimhj.github.com/blog/2012/11/17/update-mongodb-to-newest-stable-version/" >Tweet</a>
   
   
   
@@ -133,8 +155,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/" title="Previous Post: 解决 redis-search 在 Passenger 下的 reconnect 错误">&laquo; 解决 redis-search 在 Passenger 下的 reconnect 错误</a>
       
-        <a class="basic-alignment right" href="/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/" title="Next Post: 解决 redis-search 在 Passenger 下的 reconnect 错误">解决 redis-search 在 Passenger 下的 reconnect 错误 &raquo;</a>
       
     </p>
   </footer>
@@ -238,8 +260,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://jimhj.github.com/blog/2012/11/17/new-post/';
-        var disqus_url = 'http://jimhj.github.com/blog/2012/11/17/new-post/';
+        var disqus_identifier = 'http://jimhj.github.com/blog/2012/11/17/update-mongodb-to-newest-stable-version/';
+        var disqus_url = 'http://jimhj.github.com/blog/2012/11/17/update-mongodb-to-newest-stable-version/';
         var disqus_script = 'embed.js';
       
     (function () {
