@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[黄金的博客]]></title>
   <link href="http://jimhj.github.com/atom.xml" rel="self"/>
   <link href="http://jimhj.github.com/"/>
-  <updated>2012-11-17T17:10:35+08:00</updated>
+  <updated>2012-11-17T17:49:23+08:00</updated>
   <id>http://jimhj.github.com/</id>
   <author>
     <name><![CDATA[Jimmy Huangjin]]></name>
