@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://jimhj.github.com
-title: 黄金的博客
-subtitle: 虽然成长的有些晚，但是不怕，因为成长的快...
+title: Huangjin's Blog
+subtitle: "Remember, let go and move on..."
 author: Jimmy Huangjin
 simple_search: http://google.com/search
 description:
@@ -58,13 +58,13 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 # ----------------------- #
 
 # Github repositories
-github_user:
+github_user: jimhj
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: jim_hj
 twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true
@@ -89,8 +89,8 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
-disqus_show_comment_count: false
+disqus_short_name: jimhjsblog
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id:
