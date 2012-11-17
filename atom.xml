@@ -4,13 +4,22 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://jimhj.github.com/atom.xml" rel="self"/>
   <link href="http://jimhj.github.com/"/>
-  <updated>2012-11-17T16:59:04+08:00</updated>
+  <updated>2012-11-17T17:10:35+08:00</updated>
   <id>http://jimhj.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Jimmy Huangjin]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://jimhj.github.com/blog/2012/11/17/new-post/"/>
+    <updated>2012-11-17T17:07:00+08:00</updated>
+    <id>http://jimhj.github.com/blog/2012/11/17/new-post</id>
+    <content type="html"><![CDATA[<p>  之前博客在Heroku上面，经常被大墙墙掉不说，还慢的发指，还是迁移到 Github 上面来，稳定又免费，何乐而不为呢？</p>
+]]></content>
+  </entry>
   
 </feed>
