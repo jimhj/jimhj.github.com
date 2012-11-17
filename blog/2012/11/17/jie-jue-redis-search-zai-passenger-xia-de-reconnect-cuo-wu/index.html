@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Huangjin's Blog</title>
+  <title>解决 redis-search 在 Passenger 下的 reconnect 错误 - Huangjin's Blog</title>
   <meta name="author" content="Jimmy Huangjin">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jimhj.github.com/">
+  <link rel="canonical" href="http://jimhj.github.com/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -62,15 +62,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/">解决 Redis-search 在 Passenger 下的 Reconnect 错误</a></h1>
+      <h1 class="entry-title">解决 Redis-search 在 Passenger 下的 Reconnect 错误</h1>
     
     
       <p class="meta">
@@ -93,7 +90,7 @@
   </header>
 
 
-  <div class="entry-content"><p><a href="https://github.com/huacnlee/redis-search">redis-search</a> 是一款基于 Redis 的高效搜索组件, 使用起来非常方便, 效果也非常不错, 但是偶尔搜索的时候有这个错误:</p>
+<div class="entry-content"><p><a href="https://github.com/huacnlee/redis-search">redis-search</a> 是一款基于 Redis 的高效搜索组件, 使用起来非常方便, 效果也非常不错, 但是偶尔搜索的时候有这个错误:</p>
 
 <p><code>Tried to use a connection from a child process without reconnecting. You need to reconnect to Redis after forking.</code></p>
 
@@ -209,22 +206,16 @@
 <p>好了，重新启动，现在没有如上的错误了。
 参考链接：<a href="https://github.com/redis/redis-rb/blob/master/lib/redis/client.rb#L277">https://github.com/redis/redis-rb/blob/master/lib/redis/client.rb#L277</a></p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/17/new-post/">Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jimmy Huangjin</span></span>
+
+      
 
 
 
@@ -236,27 +227,32 @@
   
 
 
-<time datetime="2012-11-17T17:07:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
-        
-      </p>
+<time datetime="2012-11-17T18:12:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
+      
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>  之前博客在Heroku上面，经常被大墙墙掉不说，还慢的发指，还是迁移到 Github 上面来，稳定又免费，何乐而不为呢？</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jimhj.github.com/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/" data-via="jim_hj" data-counturl="http://jimhj.github.com/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/17/new-post/" title="Previous Post: Hello World">&laquo; Hello World</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -277,7 +273,7 @@
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/jimhj">@jimhj</a> on GitHub
@@ -307,7 +303,7 @@
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -326,6 +322,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
