@@ -1,0 +1,10 @@
+---
+layout: post
+title: "Hello World"
+date: 2012-11-17 17:07
+comments: true
+categories: 
+---
+
+
+  之前博客在Heroku上面，经常被大墙墙掉不说，还慢的发指，还是迁移到 Github 上面来，稳定又免费，何乐而不为呢？
