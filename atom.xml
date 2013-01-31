@@ -4,7 +4,7 @@
   <title><![CDATA[Huangjin's Blog]]></title>
   <link href="http://jimhj.github.com/atom.xml" rel="self"/>
   <link href="http://jimhj.github.com/"/>
-  <updated>2012-12-19T12:25:39+08:00</updated>
+  <updated>2013-01-31T21:12:22+08:00</updated>
   <id>http://jimhj.github.com/</id>
   <author>
     <name><![CDATA[Jimmy Huangjin]]></name>
@@ -12,6 +12,42 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[使用Faraday上传图片到新浪微博]]></title>
+    <link href="http://jimhj.github.com/blog/2013/01/31/shi-yong-faradayshang-chuan-tu-pian-dao-xin-lang-wei-bo/"/>
+    <updated>2013-01-31T20:48:00+08:00</updated>
+    <id>http://jimhj.github.com/blog/2013/01/31/shi-yong-faradayshang-chuan-tu-pian-dao-xin-lang-wei-bo</id>
+    <content type="html"><![CDATA[<h2>使用Faraday上传含图片内容到新浪微博</h2>
+
+<blockquote><p><a href="https://github.com/lostisland/faraday">Faraday</a> 是一个轻量灵活的 HTTP client.使用 Faraday 可以轻松的帮助我们上传含图片内容的信息到新浪微博。</p></blockquote>
+
+<p>新浪微博的 <code>statuses/upload</code> 接口要求请求必须是 <code>multipart/form-data</code> 编码格式，并且 <code>pic</code> 参数为 <code>binary</code> 类型。<a href="https://github.com/lostisland/faraday">Faraday</a> 几乎为我们实现了所有的要求，我们不需要自己来拼接这种请求报头和报文，下面是我的一个实例：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>conn = Faraday.new(:url =&gt; 'https://upload.api.weibo.com') do |faraday|
+</span><span class='line'>  faraday.request :multipart
+</span><span class='line'>  faraday.adapter :net_http
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>conn.post "/2/statuses/upload.json", {
+</span><span class='line'>  :access_token =&gt; topic.user.weibo_token,
+</span><span class='line'>  :status =&gt; URI.encode(status),
+</span><span class='line'>  :pic =&gt; Faraday::UploadIO.new(pic_path, 'image/jpeg')
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[最近有点不开心]]></title>
