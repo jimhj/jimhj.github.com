@@ -5,7 +5,6 @@ date: 2013-01-31 20:48
 comments: true
 categories: 
 ---
-##使用Faraday上传含图片内容到新浪微博
 
 >[Faraday](https://github.com/lostisland/faraday) 是一个轻量灵活的 HTTP client.使用 Faraday 可以轻松的帮助我们上传含图片内容的信息到新浪微博。
 
