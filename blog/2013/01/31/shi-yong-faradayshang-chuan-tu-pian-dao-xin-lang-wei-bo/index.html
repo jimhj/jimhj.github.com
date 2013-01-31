@@ -9,7 +9,7 @@
   <meta name="author" content="Jimmy Huangjin">
 
   
-  <meta name="description" content="使用Faraday上传含图片内容到新浪微博 Faraday 是一个轻量灵活的 HTTP client.使用 Faraday 可以轻松的帮助我们上传含图片内容的信息到新浪微博。 新浪微博的 statuses/upload 接口要求请求必须是 multipart/form-data 编码格式，并且 &hellip;">
+  <meta name="description" content="Faraday 是一个轻量灵活的 HTTP client.使用 Faraday 可以轻松的帮助我们上传含图片内容的信息到新浪微博。 新浪微博的 statuses/upload 接口要求请求必须是 multipart/form-data 编码格式，并且 pic 参数为 binary 类型。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,9 +93,7 @@
   </header>
 
 
-<div class="entry-content"><h2>使用Faraday上传含图片内容到新浪微博</h2>
-
-<blockquote><p><a href="https://github.com/lostisland/faraday">Faraday</a> 是一个轻量灵活的 HTTP client.使用 Faraday 可以轻松的帮助我们上传含图片内容的信息到新浪微博。</p></blockquote>
+<div class="entry-content"><blockquote><p><a href="https://github.com/lostisland/faraday">Faraday</a> 是一个轻量灵活的 HTTP client.使用 Faraday 可以轻松的帮助我们上传含图片内容的信息到新浪微博。</p></blockquote>
 
 <p>新浪微博的 <code>statuses/upload</code> 接口要求请求必须是 <code>multipart/form-data</code> 编码格式，并且 <code>pic</code> 参数为 <code>binary</code> 类型。<a href="https://github.com/lostisland/faraday">Faraday</a> 几乎为我们实现了所有的要求，我们不需要自己来拼接这种请求报头和报文，下面是我的一个实例：</p>
 

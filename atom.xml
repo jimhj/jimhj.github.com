@@ -4,7 +4,7 @@
   <title><![CDATA[Huangjin's Blog]]></title>
   <link href="http://jimhj.github.com/atom.xml" rel="self"/>
   <link href="http://jimhj.github.com/"/>
-  <updated>2013-01-31T21:12:22+08:00</updated>
+  <updated>2013-01-31T21:16:05+08:00</updated>
   <id>http://jimhj.github.com/</id>
   <author>
     <name><![CDATA[Jimmy Huangjin]]></name>
@@ -18,9 +18,7 @@
     <link href="http://jimhj.github.com/blog/2013/01/31/shi-yong-faradayshang-chuan-tu-pian-dao-xin-lang-wei-bo/"/>
     <updated>2013-01-31T20:48:00+08:00</updated>
     <id>http://jimhj.github.com/blog/2013/01/31/shi-yong-faradayshang-chuan-tu-pian-dao-xin-lang-wei-bo</id>
-    <content type="html"><![CDATA[<h2>使用Faraday上传含图片内容到新浪微博</h2>
-
-<blockquote><p><a href="https://github.com/lostisland/faraday">Faraday</a> 是一个轻量灵活的 HTTP client.使用 Faraday 可以轻松的帮助我们上传含图片内容的信息到新浪微博。</p></blockquote>
+    <content type="html"><![CDATA[<blockquote><p><a href="https://github.com/lostisland/faraday">Faraday</a> 是一个轻量灵活的 HTTP client.使用 Faraday 可以轻松的帮助我们上传含图片内容的信息到新浪微博。</p></blockquote>
 
 <p>新浪微博的 <code>statuses/upload</code> 接口要求请求必须是 <code>multipart/form-data</code> 编码格式，并且 <code>pic</code> 参数为 <code>binary</code> 类型。<a href="https://github.com/lostisland/faraday">Faraday</a> 几乎为我们实现了所有的要求，我们不需要自己来拼接这种请求报头和报文，下面是我的一个实例：</p>
 
