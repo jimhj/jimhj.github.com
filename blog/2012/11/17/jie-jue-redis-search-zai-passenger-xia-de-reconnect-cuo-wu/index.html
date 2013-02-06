@@ -1,99 +1,97 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>解决 redis-search 在 Passenger 下的 reconnect 错误 - Huangjin's Blog</title>
-  <meta name="author" content="Jimmy Huangjin">
+	<meta charset="utf-8">
+	<title>解决 redis-search 在 Passenger 下的 reconnect 错误 - Huangjin's Blog</title>
+	<meta name="author" content="Jimmy Huangjin">
 
-  
-  <meta name="description" content="redis-search 是一款基于 Redis 的高效搜索组件, 使用起来非常方便, 效果也非常不错, 但是偶尔搜索的时候有这个错误: Tried to use a connection from a child process without reconnecting. You need to &hellip;">
-  
+	
+	<meta name="description" content="redis-search 是一款基于 Redis 的高效搜索组件, 使用起来非常方便, 效果也非常不错, 但是偶尔搜索的时候有这个错误: Tried to use a connection from a child process without reconnecting. You need to &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://jimhj.github.com/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Huangjin's Blog" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
+	<link href="/atom.xml" rel="alternate" title="Huangjin's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Huangjin's Blog</a></h1>
-  
-    <h2>Remember, let go and move on...</h2>
-  
-</hgroup>
+<body>
+	<header id="header" class="inner"><h1><a href="/">Huangjin's Blog</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:jimhj.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/jim_hj" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/jimhj" title="GitHub">GitHub</a>
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:jimhj.github.com">
+	</form>
+</nav>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:jimhj.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
+	
+		
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/jim_hj">jim_hj</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('jim_hj', 4, false);
+	})(jQuery);
+</script>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      <h1 class="entry-title">解决 Redis-search 在 Passenger 下的 Reconnect 错误</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-17T18:12:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
-        
-         | <a href="#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><p><a href="https://github.com/huacnlee/redis-search">redis-search</a> 是一款基于 Redis 的高效搜索组件, 使用起来非常方便, 效果也非常不错, 但是偶尔搜索的时候有这个错误:</p>
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">解决 Redis-search 在 Passenger 下的 Reconnect 错误</h2>
+	<div class="entry-content"><p><a href="https://github.com/huacnlee/redis-search">redis-search</a> 是一款基于 Redis 的高效搜索组件, 使用起来非常方便, 效果也非常不错, 但是偶尔搜索的时候有这个错误:</p>
 
 <p><code>Tried to use a connection from a child process without reconnecting. You need to reconnect to Redis after forking.</code></p>
 
@@ -211,14 +209,8 @@
 </div>
 
 
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Jimmy Huangjin</span></span>
-
-      
+<div class="meta">
+	<div class="date">
 
 
 
@@ -230,132 +222,48 @@
   
 
 
-<time datetime="2012-11-17T18:12:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
-      
+<time datetime="2012-11-17T18:12:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time></div>
+	<div class="tags">
 
+</div>
+	
+		<span class="comments"><a href="/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/#disqus_thread">Comments</a></span>
+	
+</div></article>
 
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jimhj.github.com/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/" data-via="jim_hj" data-counturl="http://jimhj.github.com/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/" >Tweet</a>
-  
-  
-  
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
 
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/11/17/new-post/" title="Previous Post: Hello World">&laquo; Hello World</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/11/17/update-mongodb-to-newest-stable-version/" title="Next Post: Update MongoDB to newest stable version">Update MongoDB to newest stable version &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
 
-  <section>
-    <h1>Comments</h1>
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
-
+</section>
 </div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/01/31/shi-yong-faradayshang-chuan-tu-pian-dao-xin-lang-wei-bo/">使用Faraday上传图片到新浪微博</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/12/19/zui-jin-you-dian-bu-kai-xin/">最近有点不开心</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/17/update-mongodb-to-newest-stable-version/">Update MongoDB to newest stable version</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/17/jie-jue-redis-search-zai-passenger-xia-de-reconnect-cuo-wu/">解决 redis-search 在 Passenger 下的 reconnect 错误</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/17/new-post/">Hello World</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/jimhj">@jimhj</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'jimhj',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating...</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("jim_hj", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/jim_hj" class="twitter-follow-button" data-show-count="false">Follow @jim_hj</a>
-  
-</section>
-
-
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Jimmy Huangjin -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    Jimmy Huangjin
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
 
 <script type="text/javascript">
       var disqus_shortname = 'jimhjsblog';
@@ -372,22 +280,6 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
